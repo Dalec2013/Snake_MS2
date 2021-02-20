@@ -1,11 +1,15 @@
 var snake;
+var snakeLength;
+var snakeSize;
 
 var ctx;
 var screenWidth;
 var screenHeight;
 
-gameInitialize()
+gameInitialize();
+snakeInitialize();
 gameDraw();
+snakeDraw();
 
 function gameInitialize(){
     var cvs = document.getElementById("gameScreen");
@@ -23,6 +27,30 @@ function gameLoop(){
 }
 
 function gameDraw(){
-    ctx.fillStyle = "rgb(224,142,25)";
+    ctx.fillStyle = "rgb(67,78,161)";
     ctx.fillRect(0, 0, screenWidth, screenHeight);
+}
+
+function snakeInitialize(){
+    snake = [];
+    snakeLength = 3;
+    snakeSize = 20;
+
+    for(var i = 0; i < snakeLength; i++){
+        snake.push({
+            x: i,
+            y: 0
+        });
+    }
+}
+
+function snakeDraw(){
+    for(var i = 0; i < snake.length; i++){
+        ctx.fillStyle = "#2EE916"
+        ctx.fillRect(snake[i].x * snakeSize, snake[i].y * snakeSize, snakeSize, snakeSize)
+    }
+}
+
+function snakeUpdate(){
+
 }
