@@ -34,6 +34,8 @@ function gameInitialize(){
 
     cvs.width = screenWidth;
     cvs.height = screenHeight;
+
+    document.addEventListener("keydown", keyboardHandler);
 }
 
 function gameLoop(){
@@ -57,7 +59,7 @@ function snakeInitialize(){
     snake = [];
     snakeLength = 5;
     snakeSize = 20;
-    snakeDirection = "down";
+    snakeDirection = "right";
 
     for(var i = snakeLength - 1; i >= 0; i--){
         snake.push({
@@ -78,8 +80,17 @@ function snakeUpdate(){
     var snakeHeadX = snake[0].x;
     var snakeHeadY = snake[0].y;
 
-    if(snakeDirection == "down"){
-        snakeHeadY++
+    if(snakeDirection == "right"){
+        snakeHeadX++;
+    }
+    else if(snakeDirection == "down") {
+        snakeHeadY++;
+    }
+    else if(snakeDirection == "left"){
+        snakeHeadX--;
+    }
+    else if(snakeDirection == "up"){
+        snakeHeadY--;
     }
 
     var snakeTail = snake.pop();
@@ -112,4 +123,25 @@ function setFoodPosition(){
     
     food.x = randomX;
     food.y = randomY;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------
+    Keyboard Handler Event
+----------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+function keyboardHandler(event){
+    
+    if(event.keyCode == "37"){
+        snakeDirection = "left";
+    }
+    else if(event.keyCode == "38"){
+        snakeDirection = "up";
+    }
+    else if(event.keyCode == "39"){
+        snakeDirection = "right";
+    }
+    else if(event.keyCode == "40"){
+        snakeDirection = "down";
+    }
 }
