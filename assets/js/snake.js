@@ -114,15 +114,15 @@ function foodInitialize(){
 
 function foodDraw(){
     ctx.fillStyle = "#F42208";
-    ctx.fillRect(food.x, food.y, snakeSize, snakeSize)
+    ctx.fillRect(food.x * snakeSize, food.y * snakeSize, snakeSize, snakeSize)
 }
 
 function setFoodPosition(){
     var randomX = Math.floor(Math.random() * screenWidth);
     var randomY = Math.floor(Math.random() * screenHeight);
     
-    food.x = randomX;
-    food.y = randomY;
+    food.x = Math.floor(randomX / snakeSize);
+    food.y = Math.floor(randomY / snakeSize);
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------------------
