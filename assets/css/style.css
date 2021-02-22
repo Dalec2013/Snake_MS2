@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 /*---------------------GameBoard----------------*/
 body{
     margin: 0px;
@@ -11,4 +12,23 @@ body{
 #gameOver{
     position: absolute;
     visibility: hidden;
+}
+
+.title{
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 60px;
+    color: #E50EEC;
+    text-align: center;
+}
+
+#restartButton{
+    font-family: "Press Start 2P", sans-serif;
+    color: #E50EEC;
+    text-align: center;
+    border: solid 2px black;
+    border-radius: 20px;
+}
+
+#restartButton:hover{
+    background-color: #F20505;
 }
