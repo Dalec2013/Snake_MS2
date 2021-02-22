@@ -16,6 +16,7 @@ var screenWidth;
 var screenHeight;
 var gameState;
 var gameOverMenu;
+var restartButton;
 /*------------------------------------------------------------------------------------------------------------------------------------------
     Game Code Execution
   ------------------------------------------------------------------------------------------------------------------------------------------
@@ -40,7 +41,12 @@ function gameInitialize() {
     cvs.height = screenHeight;
 
     document.addEventListener("keydown", keyboardHandler);
+
     gameOverMenu = document.getElementById("gameOver");
+    centerMenuPosition(gameOverMenu);
+
+    restartButton = document.getElementById("restartButton");
+    restartButton.addEventListener("click", gameRestart);
 
     setState("PLAY");
 };
@@ -58,6 +64,13 @@ function gameDraw() {
     ctx.fillStyle = "rgb(67,78,161)";
     ctx.fillRect(0, 0, screenWidth, screenHeight);
 };
+
+function gameRestart(){
+    snakeInitialize();
+    foodInitialize();
+    hideMenu(gameOverMenu);
+    setState("PLAY");
+}
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------
     Snake Functions
@@ -191,12 +204,27 @@ function setState(state) {
     showMenu(state);
 }
 
-function displayMenu(menu){
+/*------------------------------------------------------------------------------------------------------------------------------------------
+    Game Menu
+ -------------------------------------------------------------------------------------------------------------------------------------------
+ */
+
+function displayMenu(menu) {
     menu.style.visibility = "visible";
 }
 
-function showMenu(state){
-    if(state == "GAME OVER"){
+function hideMenu(menu){
+    menu.style.visibility = "hidden";
+}
+
+function showMenu(state) {
+    if (state == "GAME OVER") {
         displayMenu(gameOverMenu);
     }
+}
+
+function centerMenuPosition(menu) {
+    menu.style.top = (screenHeight / 2) - (menu.offsetHeight / 2) + "px";
+    menu.style.left = (screenWidth / 2) - (menu.offsetWidth / 2) + "px";
+    
 }
