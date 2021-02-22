@@ -1,3 +1,4 @@
+/*---------------------GameBoard----------------*/
 body{
     margin: 0px;
     padding: 0px;
@@ -5,4 +6,9 @@ body{
 
 #gameScreen{
     display: block;
+}
+/*----------------------Menus-------------------*/
+#gameOver{
+    position: absolute;
+    visibility: hidden;
 }
