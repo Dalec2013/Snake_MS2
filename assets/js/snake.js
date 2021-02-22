@@ -38,19 +38,19 @@ function gameInitialize(){
     cvs.height = screenHeight;
 
     document.addEventListener("keydown", keyboardHandler);
-}
+};
 
 function gameLoop(){
     gameDraw();
     snakeUpdate();
     snakeDraw();
     foodDraw();
-}
+};
 
 function gameDraw(){
     ctx.fillStyle = "rgb(67,78,161)";
     ctx.fillRect(0, 0, screenWidth, screenHeight);
-}
+};
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------
     Snake Functions
@@ -69,14 +69,14 @@ function snakeInitialize(){
             y: 0
         });
     }
-}
+};
 
 function snakeDraw(){
     for(var i = 0; i < snake.length; i++){
         ctx.fillStyle = "#2EE916"
         ctx.fillRect(snake[i].x * snakeSize, snake[i].y * snakeSize, snakeSize, snakeSize)
     }
-}
+};
 
 function snakeUpdate(){
     snakeHeadX = snake[0].x;
@@ -93,15 +93,16 @@ function snakeUpdate(){
     }
     else if(snakeDirection == "up"){
         snakeHeadY--;
-    }
+    };
 
     checkFoodCollision();
+    checkWallCollision();
 
     var snakeTail = snake.pop();
     snakeTail.x = snakeHeadX;
     snakeTail.y = snakeHeadY;
     snake.unshift(snakeTail);
-}
+};
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------
     Food Functions
@@ -114,12 +115,12 @@ function foodInitialize(){
         y: 0
     };
     setFoodPosition();
-}
+};
 
 function foodDraw(){
     ctx.fillStyle = "#F42208";
     ctx.fillRect(food.x * snakeSize, food.y * snakeSize, snakeSize, snakeSize)
-}
+};
 
 function setFoodPosition(){
     var randomX = Math.floor(Math.random() * screenWidth);
@@ -127,7 +128,7 @@ function setFoodPosition(){
     
     food.x = Math.floor(randomX / snakeSize);
     food.y = Math.floor(randomY / snakeSize);
-}
+};
 
 /*--------------------------------------------------------------------------------------------------------------------------------------
     Keyboard Handler Event
@@ -148,7 +149,7 @@ function keyboardHandler(event){
     else if(event.keyCode == "40" && snakeDirection != "up"){
         snakeDirection = "down";
     }
-}
+};
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------
     Collision Handling
@@ -164,6 +165,10 @@ function keyboardHandler(event){
         snakeLength++;
         setFoodPosition();
     }
+ };
 
-
-  }
+ function checkWallCollision(){
+    if(snakeHeadX * snakeSize >= screenWidth || snakeHeadX * snakeSize < 0 || snakeHeadY * snakeSize >= screenHeight || snakeHeadY * snakeSize < 0){
+        console.log("wall collision");
+    }
+ }
