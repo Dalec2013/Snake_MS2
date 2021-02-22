@@ -16,6 +16,7 @@ var screenWidth;
 var screenHeight;
 var gameState;
 var gameOverMenu;
+var startGameMenu;
 var restartButton;
 /*------------------------------------------------------------------------------------------------------------------------------------------
     Game Code Execution
@@ -45,10 +46,17 @@ function gameInitialize() {
     gameOverMenu = document.getElementById("gameOver");
     centerMenuPosition(gameOverMenu);
 
+    startGameMenu = document.getElementById("startGame");
+    centerMenuPosition(startGameMenu);
+
     restartButton = document.getElementById("restartButton");
     restartButton.addEventListener("click", gameRestart);
 
+    startButton = document.getElementById("startButton");
+    startButton.addEventListener("click", startGame);
+
     setState("PLAY");
+    
 };
 
 function gameLoop() {
@@ -64,6 +72,13 @@ function gameDraw() {
     ctx.fillStyle = "rgb(67,78,161)";
     ctx.fillRect(0, 0, screenWidth, screenHeight);
 };
+
+function startGame(){
+    snakeInitialize();
+    foodInitialize();
+    hideMenu(startGameMenu);
+    setState("PLAY");
+}
 
 function gameRestart(){
     snakeInitialize();
@@ -221,6 +236,7 @@ function showMenu(state) {
     if (state == "GAME OVER") {
         displayMenu(gameOverMenu);
     }
+   
 }
 
 function centerMenuPosition(menu) {

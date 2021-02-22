@@ -14,6 +14,10 @@ body{
     visibility: hidden;
 }
 
+#startGame{
+    position: absolute;
+}
+
 .title{
     font-family: "Press Start 2P", sans-serif;
     font-size: 60px;
@@ -24,12 +28,30 @@ body{
 
 #restartButton{
     font-family: "Press Start 2P", sans-serif;
-    color: #E50EEC;
+    color: #2EE916;
     text-align: center;
-    border: solid 2px black;
+    border: solid 2px #2EE916;
     border-radius: 10px;
 }
 
 #restartButton:hover{
     background-color: #F20505;
+}
+
+#startButton{
+     font-family: "Press Start 2P", sans-serif;
+    color: #2EE916;
+    text-align: center;
+    border: solid 2px #2EE916;
+    border-radius: 10px;
+}
+
+#startButton:hover{
+    background-color: #F20505;
+}
+
+.welcome{
+    font-family: "Press Start 2P", sans-serif;
+    color: #2EE916;
+    text-align: center;
 }
