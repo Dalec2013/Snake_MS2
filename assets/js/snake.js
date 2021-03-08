@@ -48,6 +48,9 @@ function gameInitialize() {
     gameOverMenu = document.getElementById("gameOver");
     centerMenuPosition(gameOverMenu);
 
+    scoreBoard = document.getElementById("scoreBoard");
+    score = document.getElementById("score");
+
     startGameMenu = document.getElementById("startGame");
     centerMenuPosition(startGameMenu);
 
@@ -68,6 +71,7 @@ function gameInitialize() {
 
 function gameLoop() {
     gameDraw();
+    drawScoreBoard();
     if (gameState == "PLAY") {
         snakeUpdate();
         snakeDraw();
@@ -102,8 +106,8 @@ function gameRestart(){
 function snakeInitialize() {
     snake = [];
     snakeLength = 1;
-    snakeSize = 30;
-    snakeDirection = "idle";
+    snakeSize = 40;
+    snakeDirection = "down";
 
     for (var i = snakeLength - 1; i >= 0; i--) {
         snake.push({
@@ -255,6 +259,9 @@ function showMenu(state) {
     if (state == "GAME OVER") {
         displayMenu(gameOverMenu);
     }
+    else if (state == "PLAY"){
+        displayMenu(scoreBoard);
+    }
     
    
 }
@@ -263,4 +270,8 @@ function centerMenuPosition(menu) {
     menu.style.top = (screenHeight / 2) - (menu.offsetHeight / 2) + "px";
     menu.style.left = (screenWidth / 2) - (menu.offsetWidth / 2) + "px";
     
+}
+
+function drawScoreBoard(){
+    score.innerHTML = "Length: " + snakeLength;
 }

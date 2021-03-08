@@ -27,6 +27,8 @@ body{
     font-family: "Press Start 2P", sans-serif;
     color: #2EE916;
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .title{
