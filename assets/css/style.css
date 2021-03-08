@@ -18,6 +18,17 @@ body{
     position: absolute;
 }
 
+#scoreBoard{
+    position: absolute;
+    visibility: hidden;
+}
+
+#score{
+    font-family: "Press Start 2P", sans-serif;
+    color: #2EE916;
+    text-align: center;
+}
+
 .title{
     font-family: "Press Start 2P", sans-serif;
     font-size: 60px;
