@@ -25,6 +25,18 @@ This is my version of the classic snake game. You'll get nostalgia from playing 
 1. As a frequent user i'm playing the game for the nostalgia of a classic childhood game.
 2. As a frequent user i'm intent on beating my score and getting better at the game.
 
+### Design 
+#### Colour Scheme
+The colour scheme of my game is a light purple a nice neon green and red.
+#### Typography
+The main fonts of the game is press start 2p from google fonts.
 
+### Wireframes
+<img src = assets/img/Desktop Welcome.png> 
+<img src = assets/img/Desktop Game Play.png> 
+<img src = assets/img/Mobile Welcome.png> 
+<img src = assets/img/Mobile Game Play.png> 
+<img src = assets/img/Tablet Welcome.png> 
+<img src = assets/img/Tablet Game Play.png> 
 
 
