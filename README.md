@@ -1,6 +1,6 @@
 <h1 align="center">Snake</h1>
 
-[View the live project here.]()
+[View the live project here.](https://dalec2013.github.io/Snake_MS2/)
 
 This is my version of the classic snake game. You'll get nostalgia from playing this game. For all you new players I hope you enjoy a classic game from my childhood.
 
@@ -78,4 +78,26 @@ I used the W3C Markup validator and W3C CSS validator to validate my work and ma
 2. As a frequent user i'm intent on beating my score and getting better at the game.
   * Thats the best part about this game you can never get board your always trying to beat your previous score even if it's only by one point this game will never get old.
 
-  
+### Further Testing
+The game works on all browsers chrome/firefox/microsoft edge and safari.
+The game has been viewed on multiple devices such as Desktop/Ipad/Iphone 7 & X and also on samsung galaxy s20 ultra.
+Plenty of testing has gone into this game me my partner and a couple have friends have played the game and found minimal bugs.
+
+### Known bugs
+When the page first loads up the start game menu slightly shifts to the right but after refreshing the page its again centered i have tryed to fix ths issue to no success.
+
+## Deployment 
+
+### Github pages
+
+The project was deployed to git hub using these steps...
+
+1. Login to github and locate the [Snake_MS2 repository](https://github.com/Dalec2013?tab=repositories).
+2. At the top of the repository locate the settings tab.
+3. Scroll down the page till you find the "GitHub Pages" section.
+4. Under source cliick the dropdown box labeled none and select master branch.
+5. The page will refresh.
+6. Scroll back down the page to get to the published link (https://dalec2013.github.io/Snake_MS2/)
+
+
+
