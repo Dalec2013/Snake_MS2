@@ -39,4 +39,18 @@ The main fonts of the game is press start 2p from google fonts.
 <img src = assets/img/Tablet Welcome.png> 
 <img src = assets/img/Tablet Game Play.png> 
 
+## Features
+Responsive on all devices.
+Interactive elements.
+
+## Technologies Used
+### Languages Used
+* HTML5
+* CSS
+* JavaScript
+
+## FrameWorks
+
+I have used no frameworks with this project.
+
 
