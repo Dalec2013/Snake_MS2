@@ -28,6 +28,7 @@ var yDown = null;
   ------------------------------------------------------------------------------------------------------------------------------------------
   */
 gameInitialize();
+noScroll();
 snakeInitialize();
 foodInitialize();
 setInterval(gameLoop, 1000 / 20);
@@ -281,6 +282,10 @@ function drawScoreBoard(){
     score.innerHTML = "Length: " + snakeLength;
 }
 
+/*--------------------------------------------------------------------------------------------------------------------------------------------
+    Touch Handler
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    */
 
 function getTouches(evt) {
   return evt.touches ||             // browser API
@@ -325,3 +330,6 @@ function handleTouchMove(evt) {
     yDown = null;                                             
 };
 
+function noScroll(){
+    window.removeEventListener("scroll", noScroll);
+}
