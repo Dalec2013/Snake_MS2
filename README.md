@@ -130,3 +130,7 @@ $ git clone https://github.com/dalec2013/Snake_MS2
 > remove: Total 10 (delta 1), reused 10 (delta 1)
 > Unpacking objects: 100% (10/10), done.
 
+### Acknowledgement
+w3schools.com
+stackoverflow.com
+theappacademy Youtube Channel.
